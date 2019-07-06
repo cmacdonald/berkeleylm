@@ -141,7 +141,7 @@ public class GoogleLmReader<W> implements LmReader<LongRef, NgramOrderedLmReader
 		}
 		try {
 			for (final String line : Iterators.able(IOUtils.lineIterator(sortedVocabPath))) {
-				final String[] parts = line.split("\t");
+				final String[] parts = line.split("\t", 2);
 				final String word = parts[0];
 				wordIndexer.getOrAddIndexFromString(word);
 			}
